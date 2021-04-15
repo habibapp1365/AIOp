@@ -1,3 +1,11 @@
+# Visual Studio Code Configs
+.vscode/
+
+# Django files
+manage.py
+wsgi.py
+asgi.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
