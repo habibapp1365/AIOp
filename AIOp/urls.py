@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.LoginView.as_view(template_name='login.html'), name='login'),          # Class-Based View
     path('logout/', views.LogoutView.as_view(template_name='logout.html'), name='logout'),      # Class-Based View
+    
     path('', include('System.urls')),
     path('RADIUS/', include('RADIUS.urls')),
 ]
