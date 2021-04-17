@@ -40,6 +40,7 @@ INSTALLED_APPS = [
         #3RD PARTY
     'crispy_forms',
         #OWN
+    'System',
     'RADIUS',
     'AAA'
 ]
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'login_required.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -132,8 +134,14 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#LOGIN_URL = 'login'
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
+LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [
+    'login',
+    'admin:index',
+    'admin:login',
+    'namespace:url_name',
+]
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
