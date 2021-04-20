@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
         #OWN
     'System',
+    'Services',
     'RADIUS',
     'AAA'
 ]

@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- ##################### Required meta tags ###################### -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- ##################### Required meta tags ###################### -->
         <!-- ######################## BOOTSTRAP CSS ######################## -->
         <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/font-awesome.min.css' %}">
@@ -27,18 +31,35 @@
 
     </head>
     <body>
-
+        
         {% block nav %}
-            {% include "nav2.html" %}
+            {% include "navbar/nav.html" %}
         {% endblock %}
-
+        
         {% block body %}
+        <div class="container-fluid p-0">
+            <div class="row bg-warning">
+                row1
+            </div>
+            <div class="row bg-danger">
+                row2
+            </div>
+            <div class="row">
+                <div class="col-2  bg-primary float-left">
+                    col1
+                    col1
+                </div>
+                <div class="col-10 bg-success float-right">
+                    col2
+                </div>
+        </div>
+        </div>
         {% endblock %}
         
         <!-- ######################## BOOTSTRAP SCRIPTS ######################## -->
         <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
-        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
         <!-- ######################## BOOTSTRAP SCRIPTS ######################## -->
     </body>
 </html>

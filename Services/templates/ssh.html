@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid h-100">
+	<div class="h-100 d-flex align-items-center justify-content-center">
+		<form class="d-flex" method="POST">{% csrf_token %}
+			<label for="status">ssh: </label><br>
+			<input class="mt-1" type="checkbox" id="status" name="status">
+			{% ifequal  Status "active"%}
+				<script>document.getElementById("status").checked = true;</script>
+			{% endifequal %}
+		</form>
+	</div>
+</div>
+
+	<h3>welcom to ssh {{ Status }}</h3>
+
+	<script>
+		function check() {
+    		document.getElementById("status").checked = true;
+		}
+
+		function uncheck() {
+    		document.getElementById("status").checked = false;
+		}
+	</script>
+{% endblock body %}
