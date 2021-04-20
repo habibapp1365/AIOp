@@ -1,0 +1,35 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    height: 100%;
+    background: gray;
+}
+.v {
+    position: relative;
+    float: right;
+    border: thin solid black;
+    right: 0;
+    left: 0;
+  }
+
+.d1{
+    background: blue;
+    width: 50%;
+
+}
+.d2{
+    background: red;
+    width: 50%;
+    float: unset;
+}
+.d3{
+    background: green;
+    float: unset;
+}
+.d4{
+    background: yellow;
+    width: 20%;
+}

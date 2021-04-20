@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- ######################## BOOTSTRAP CSS ######################## -->
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/style.css' %}">
+        <!-- ######################## BOOTSTRAP CSS ######################## -->
+        <!-- ########################## STYLES CSS ######################### -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <!-- ########################## STYLES CSS ######################### -->
+
+        {% block styles %}
+        {% endblock %}
+
+        <title>
+
+            {% block title %}
+                replace me
+            {% endblock %}
+
+        </title>
+
+        {% block scripts %}
+        {% endblock %}
+
+    </head>
+    <body>
+
+        {% block nav %}
+            {% include "nav2.html" %}
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+        
+        <!-- ######################## BOOTSTRAP SCRIPTS ######################## -->
+        <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+        <!-- ######################## BOOTSTRAP SCRIPTS ######################## -->
+    </body>
+</html>
