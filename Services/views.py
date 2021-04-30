@@ -5,5 +5,6 @@ from RADIUS.models import User
 
 def ssh(request):
     print(request)
-    today = utill.getStatus("sshd")
-    return render(request, "ssh.html", {"Status" : today})
+    status = utill.isActive("sshd")
+    port = utill.readConfig("sshd", ["Port"])
+    return render(request, "ssh.html", {"isActive" : status,"Port" : port})

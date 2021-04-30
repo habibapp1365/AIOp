@@ -1,26 +1,22 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="container-fluid h-100">
-	<div class="h-100 d-flex align-items-center justify-content-center">
-		<form class="d-flex" method="POST">{% csrf_token %}
-			<label for="status">ssh: </label><br>
-			<input class="mt-1" type="checkbox" id="status" name="status">
-			{% ifequal  Status "active"%}
-				<script>document.getElementById("status").checked = true;</script>
-			{% endifequal %}
-		</form>
+	<div class="container-fluid h-100">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+			<form method="POST">{% csrf_token %}
+				<div class="d-flex">
+					<label for="status">ssh: </label><br>
+					<input class="mt-1" type="checkbox" id="status" name="status">
+				</div>
+				
+				{% if not isActive%}
+					<script>document.getElementById("status").checked = true;</script>
+				{% endif %}
+
+				<div class="d-flex">
+					<label class="mt-2"for="port">Port:  </label><br>
+					<input type="textbox" id="port" name="port" value={{ Port }}>
+				</div>
+			</form>
+		</div>
 	</div>
-</div>
-
-	<h3>welcom to ssh {{ Status }}</h3>
-
-	<script>
-		function check() {
-    		document.getElementById("status").checked = true;
-		}
-
-		function uncheck() {
-    		document.getElementById("status").checked = false;
-		}
-	</script>
 {% endblock body %}
