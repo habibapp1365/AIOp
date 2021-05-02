@@ -1,0 +1,3 @@
+django
+django-login-required-middleware
+django-crispy-forms
