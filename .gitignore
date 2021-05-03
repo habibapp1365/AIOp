@@ -3,6 +3,7 @@
 .directory
 
 # Django files
+.directory
 manage.py
 wsgi.py
 asgi.py
