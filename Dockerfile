@@ -1,4 +1,4 @@
-FROM habibapp1365/alpine-django
+FROM habibapp1365/alpine-django:latest
 
 RUN mkdir /app
 WORKDIR /app
