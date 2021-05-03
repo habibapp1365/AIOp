@@ -1,6 +1,6 @@
 FROM habibapp1365/alpine-django:latest
 
-RUN mkdir /app
+#RUN mkdir /app
 WORKDIR /app
 
 COPY requirements.txt ./
