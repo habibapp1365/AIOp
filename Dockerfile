@@ -1,4 +1,4 @@
-FROM python:latest
+FROM habibapp1365/alpine-dj:1
 
 RUN mkdir /app
 WORKDIR /app
