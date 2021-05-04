@@ -26,6 +26,7 @@ on:
 ###############
 jobs:
   job1:
+    continue-on-error: true
     # Name the Job
     name: Lint Code Base
     # Set the agent to run on
