@@ -2,7 +2,7 @@
 .vscode/
 .directory
 
-# Django files
+# Django Files
 .directory
 ##manage.py
 wsgi.py
