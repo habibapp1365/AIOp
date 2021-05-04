@@ -62,7 +62,7 @@ jobs:
           
   job2:
     name: Slack
-    needs: [job1]
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: Notify slack
@@ -70,4 +70,4 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         uses: pullreminders/slack-action@master
         with:
-          args: '{\"channel\":\"C0218M26FUH\",\"text\":\"${{ job1.status }}, \"}'
+          args: '{\"channel\":\"C0218M26FUH\",\"text\":\"${{ jobs.job1.status }}, \"}'
