@@ -14,4 +14,4 @@ jobs:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C0218M26FUH\",\"text\":\"Hello world\"}'
+        args: '{\"channel\":\"C0218M26FUH\",\"details\":\"Hello world\"}'
