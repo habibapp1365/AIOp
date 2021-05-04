@@ -61,7 +61,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
   job2:
-    needs: job1
+    name: Slack
+    needs: [job1]
     runs-on: ubuntu-latest
     steps:
       - name: Notify slack
