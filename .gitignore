@@ -5,7 +5,6 @@
 # Django Files
 .directory
 ##manage.py
-wsgi.py
 asgi.py
 
 # Byte-compiled / optimized / DLL files
