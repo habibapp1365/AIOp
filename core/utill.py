@@ -13,7 +13,7 @@ def getStatus(service):
     cmd = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     for line in cmd.stdout:
         if b"Active" in line:
-            output = lin.decode('UTF-8')
+            output = line.decode('UTF-8')
     ls = output.split()
     print(ls[1])
     return(ls[1])
