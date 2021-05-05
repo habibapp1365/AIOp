@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN python3 -V
 RUN pip freeze
 EXPOSE 8000
-#RUN python3 /app/manage.py runserver
+RUN python3 /app/manage.py runserver

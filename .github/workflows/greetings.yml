@@ -5,7 +5,7 @@ on: [pull_request, issues]
 jobs:
   greeting:
     runs-on: ubuntu-latest
-    permissions:
+    aaazapermissions:
       issues: write
       pull-requests: write
     steps:
