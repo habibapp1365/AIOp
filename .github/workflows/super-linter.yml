@@ -1,0 +1,50 @@
+---
+name: Lint Code Base
+
+on:
+  push:
+    branches-ignore: [Dev]
+  
+  pull_request:
+    branches: []
+
+jobs:
+  job1:
+    continue-on-error: true
+
+    name: Lint Code Base
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          
+          fetch-depth: 0
+
+      - name: Lint Code Base
+        uses: github/super-linter@v3
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_CSS: true
+          VALIDATE_DOCKERFILE: true
+          VALIDATE_PYTHON: true
+          VALIDATE_PYTHON_PYLINT: true
+          VALIDATE_YAML: true
+          VALIDATE_HTML: TRUE
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+  job2:
+    name: Slack
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify slack
+        env: 
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: pullreminders/slack-action@master
+        with:
+          args: '{\"channel\":\"C0218M26FUH\",\"text\":\"${{ job.job1.status }}, ${{ github.event_name }} in ${{ github.repository }}\"}'

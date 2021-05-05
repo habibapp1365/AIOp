@@ -2,10 +2,9 @@
 .vscode/
 .directory
 
-# Django files
+# Django Files
 .directory
-manage.py
-wsgi.py
+##manage.py
 asgi.py
 
 # Byte-compiled / optimized / DLL files

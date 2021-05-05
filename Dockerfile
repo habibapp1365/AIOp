@@ -1,13 +1,13 @@
-FROM habibapp1365/alpine-dj:1
+FROM habibapp1365/alpine-django:latest
 
-RUN mkdir /app
+#RUN mkdir /app
 WORKDIR /app
 
 COPY requirements.txt ./
 COPY . /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
-RUN python -V
+RUN python3 -V
 RUN pip freeze
 EXPOSE 8000
-RUN python manage.py runserver
+# RUN python3 /app/manage.py runserver
