@@ -1,17 +1,18 @@
-name: Slack
 
-on:
-  push:
-    branches: [master]
+# name: Slack
+
+# on:
+#   push:
+#     branches: [master]
   
-jobs:
+# jobs:
 
-  slack:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Notify slack
-      env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-      uses: pullreminders/slack-action@master
-      with:
-        args: '{\"channel\":\"C0218M26FUH\",\"text\":\"${{ job.status }}\"}'
+#   slack:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Notify slack
+#       env:
+#         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+#       uses: pullreminders/slack-action@master
+#       with:
+#         args: '{\"channel\":\"C0218M26FUH\",\"text\":\"${{ job.status }}\"}'
